@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{data.titlo}}</title>  <!--añadiendo dinamicamente el titulo-->
+</head>
+
+<body>
+
+    <h3>
+        <!--imprimiendo mensaje de forma dinámica-->
+        {{data.saludo}}, {{data.nombre}} {{data.apellido}} 
+    </h3>
+    
+    <br>  <!--estableciendo un salto de linea-->
+
+    <h4>
+        <!--especificando numero de cursos-->
+        Se matriculó en {{data.cantidad_cursos}} cursos:
+        <br>
+    </h4>
+
+    <!--imprimiendo cursos-->
+    <ul> <!--unordered list: lista no ordenada (con guiones) -->
+        {%for curso in data.cursos%} <!--bucle para recorrer cada elem de la lista cursos (que se encuentra en *data* )-->
+        <li> {{curso}} </li> <!--obteniendo cada curso, con comillas dobles-->
+        {%endfor%}
+    </ul>
+
+    <!--estableciendo un condicional-->
+    {%if data.fin==True%}
+    <h5>Fin del informe</h5>
+
+    {%else%}
+    <h5>Informe sin fin</h5>
+
+    {%endif%}
+</body>
+</body>
+</html>
